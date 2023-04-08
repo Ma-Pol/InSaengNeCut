@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>인생 네컷</title>
+    <style>
+      @font-face {
+        font-family: "LeeSeoyun";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      body {
+        font-family: "LeeSeoyun";
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        background-image: url("./imgs/background.png");
+      }
+      .container {
+        width: 390px;
+        height: 100%;
+        background-color: #ff9d73;
+        border-radius: 10px;
+      }
+      .photos {
+        margin-top: 30px;
+      }
+      .photoFrame {
+        background-color: #ffffff;
+        margin: 15px 20px;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        cursor: pointer;
+      }
+
+      #image1 {
+        background-image: url("./imgs/img1.png");
+      }
+      #image2 {
+        background-image: url("./imgs/img2.png");
+      }
+      #image3 {
+        background-image: url("./imgs/img3.png");
+      }
+      .video {
+        width: 100%;
+        height: 100%;
+      }
+
+      .photoDescription {
+        color: #ffffff;
+        background-color: #000000;
+        width: fit-content;
+        padding: 0 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        position: absolute;
+        bottom: 0;
+        transform: translate(-50%);
+        left: 50%;
+      }
+
+      .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .footerTitle {
+        font-size: 25px;
+        font-weight: 900;
+        color: #ffffff;
+      }
+      .footerDate {
+        font-size: 15px;
+        font-weight: 500;
+        color: #ffffff;
+      }
+
+      .showText {
+        opacity: 1;
+      }
+      .hideText {
+        opacity: 0;
+        transition: opacity 0.5s linear;
+      }
+    </style>
+    <script>
+      window.onload = () => {
+        const image1 = document.getElementById("image1");
+        const image2 = document.getElementById("image2");
+        const image3 = document.getElementById("image3");
+        const desc1 = document.getElementById("desc1");
+        const desc2 = document.getElementById("desc2");
+        const desc3 = document.getElementById("desc3");
+
+        image1.addEventListener("mouseover", () => {
+          desc1.classList.remove("hideText");
+          desc1.classList.add("showText");
+        });
+        image1.addEventListener("mouseout", () => {
+          desc1.classList.remove("showText");
+          desc1.classList.add("hideText");
+        });
+        image1.addEventListener("click", () => {
+          alert("르탄이 이미지 1번 클릭");
+        });
+
+        image2.addEventListener("mouseover", () => {
+          desc2.classList.remove("hideText");
+          desc2.classList.add("showText");
+        });
+        image2.addEventListener("mouseout", () => {
+          desc2.classList.remove("showText");
+          desc2.classList.add("hideText");
+        });
+        image2.addEventListener("click", () => {
+          alert("르탄이 이미지 2번 클릭");
+        });
+
+        image3.addEventListener("mouseover", () => {
+          desc3.classList.remove("hideText");
+          desc3.classList.add("showText");
+        });
+        image3.addEventListener("mouseout", () => {
+          desc3.classList.remove("showText");
+          desc3.classList.add("hideText");
+        });
+        image3.addEventListener("click", () => {
+          alert("르탄이 이미지 3번 클릭");
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="photos">
+        <div id="image1" class="photoFrame">
+          <span id="desc1" class="photoDescription hideText"
+            >르탄이 이미지 1번</span
+          >
+        </div>
+        <div id="image2" class="photoFrame">
+          <span id="desc2" class="photoDescription hideText"
+            >르탄이 이미지 2번</span
+          >
+        </div>
+        <div id="image3" class="photoFrame">
+          <span id="desc3" class="photoDescription hideText"
+            >르탄이 이미지 3번</span
+          >
+        </div>
+        <div class="photoFrame">
+          <iframe
+            class="video"
+            src="https://www.youtube.com/embed/TWz1btekxfs"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </div>
+      <div class="footer">
+        <p class="footerTitle">간단하게 HTML CSS JS 돌아보기</p>
+        <p class="footerDate">2023.04.08</p>
+      </div>
+    </div>
+  </body>
+</html>
